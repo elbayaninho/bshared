@@ -1,0 +1,9 @@
+# User routes
+bshared_user_admin_users:
+    resource: "@BsharedUserBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/users
+
+# User homepage route
+bshared_user_homepage:
+    path:     /
+    defaults: { _controller: BsharedUserBundle:Frontend:index }

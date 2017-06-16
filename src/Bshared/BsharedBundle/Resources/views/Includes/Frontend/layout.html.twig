@@ -1,0 +1,224 @@
+{# Frontend Twig template #}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bshared for B2Dev">
+    <meta name="author" content="Baimi Badjoua">
+
+    <title>{% block title %}Bshared {% endblock title %}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ asset('front-end/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link href="{{ asset('front-end/css/font-awesome.min.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ asset('front-end/css/animate.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ asset('front-end/css/style.css') }}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    {#<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>#}
+
+
+    <!-- Template js -->
+    <script src="{{ asset('front-end/js/jquery-2.1.1.min.js') }}"></script>
+    <script src="{{ asset('front-end/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('front-end/js/jquery.appear.js') }}"></script>
+    <script src="{{ asset('front-end/js/contact_me.js') }}"></script>
+    <script src="{{ asset('front-end/js/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ asset('front-end/js/modernizr.custom.js') }}"></script>
+    <script src="{{ asset('front-end/js/script.js') }}"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- Start Logo Section -->
+<section id="logo-section" class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="logo text-center">
+                    <h1>Bshared</h1>
+                    <span>Share and Find docs easely</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Logo Section -->
+
+
+<!-- Start Main Body Section -->
+<div class="mainbody-section text-center">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <div class="menu-item blue">
+                    <a href="#service-modal" data-toggle="modal">
+                        <i class="fa fa-area-chart"></i>
+                        <p>Shared docs</p>
+                    </a>
+                </div>
+
+                <div class="menu-item green">
+                    <a href="#portfolio-modal" data-toggle="modal">
+                        <i class="fa fa-file-photo-o"></i>
+                        <p>Portfolio</p>
+                    </a>
+                </div>
+
+                <div class="menu-item light-red">
+                    <a href="#about-modal" data-toggle="modal">
+                        <i class="fa fa-user"></i>
+                        <p>About Us</p>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <!-- Start Carousel Section -->
+                <div class="home-slider">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="padding-bottom: 30px;">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="{{ asset('front-end/images/about-03.jpg') }}" class="img-responsive" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('front-end/images/about-02.jpg') }}" class="img-responsive" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('front-end/images/about-01.jpg') }}" class="img-responsive" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Start Carousel Section -->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="menu-item color responsive">
+                            <a href="#feature-modal" data-toggle="modal">
+                                <i class="fa fa-magic"></i>
+                                <p>Feature</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="menu-item light-orange responsive-2">
+                            <a href="#team-modal" data-toggle="modal">
+                                <i class="fa fa-users"></i>
+                                <p>Team</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="menu-item light-red">
+                    <a href="#contact-modal" data-toggle="modal">
+                        <i class="fa fa-envelope-o"></i>
+                        <p>Contact</p>
+                    </a>
+                </div>
+
+                <div class="menu-item color">
+                    <a href="#testimonial-modal" data-toggle="modal">
+                        <i class="fa fa-comment-o"></i>
+                        <p>Testimonial</p>
+                    </a>
+                </div>
+
+                <div class="menu-item blue">
+                    <a href="#news-modal" data-toggle="modal">
+                        <i class="fa fa-mortar-board"></i>
+                        <p>Latest News</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Main Body Section -->
+
+<!-- Start Copyright Section -->
+{% include "BsharedBsharedBundle:Includes:Frontend/footer.html.twig" %}
+<!-- End Copyright Section -->
+
+
+<!-- Start Service Section -->
+{#{% include "BsharedBsharedBundle:Includes:Frontend/service.html.twig" %}#}
+{{ render(controller('BsharedBsharedBundle:Frontend:document')) }}
+<!-- End Service Section -->
+
+
+<!-- Start Portfolio Section -->
+{% include "BsharedBsharedBundle:Includes:Frontend/portfolio.html.twig" %}
+<!-- End Portfolio Section -->
+
+
+<!-- Start About Us Section -->
+{% include "BsharedBsharedBundle:Includes:Frontend/about.html.twig" %}
+<!-- End About Us Section -->
+
+
+<!-- Start Feature Section -->
+{% include "BsharedBsharedBundle:Includes:Frontend/feature.html.twig" %}
+<!-- End Feature Section -->
+
+
+<!-- Start Team Member Section -->
+{% include "BsharedBsharedBundle:Includes:Frontend/team.html.twig" %}
+<!-- End Team Member Section -->
+
+
+<!-- Start Latest News Section -->
+{% include "BsharedBsharedBundle:Includes:Frontend/news.html.twig" %}
+<!-- End Latest News Section -->
+
+
+<!-- Start Contact Section -->
+{% include "BsharedBsharedBundle:Includes:Frontend/contact.html.twig" %}
+<!-- End Contact Section -->
+
+
+<!-- Start Testimonial Section -->
+{% include "BsharedBsharedBundle:Includes:Frontend/testimonial.html.twig" %}
+<!-- End Testimonial Section -->
+
+</body>
+
+</html>

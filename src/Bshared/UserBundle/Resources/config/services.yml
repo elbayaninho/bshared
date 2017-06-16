@@ -1,0 +1,4 @@
+services:
+#    bank_user.example:
+#        class: Bshared\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

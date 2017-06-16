@@ -1,0 +1,63 @@
+<div class="section-modal modal fade" id="service-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center">
+                    <h3>Choose one action</h3>
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <a href="{{ path('user_document_new') }}" class="btn btn-warning my-btn"><i class="fa fa-plus"></i> New</a>
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <a href="{{ path('user_document') }}" class="btn btn-success my-btn"><i class="fa fa-list"></i> Manage</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="container">
+                <div class="row">
+                    <div class="page-header my-box-5">
+                        <h1 class="text-center">List of latests doc</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="table-responsive my-box-4">
+                        <table class="table table-striped table-hover table-bordered records_list">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Shared Date</th>
+                                <th>Doc Name</th>
+                                <th>Doc Size</th>
+                                <th>Author</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for document in documents %}
+                                <tr>
+                                    <th>{{ document.id }}</th>
+                                    <th>{{ document.createdAt|date('Y-d-m') }}</th>
+                                    <th>{{ document.name }}</th>
+                                    <th>{{ document.size }}</th>
+                                    <th class="text-success">{{ document.author.username|upper }}</th>
+                                    <th><a href="{{ asset('uploads/' ~ document.name) }}">Load file (.{{ document.extension }})</a></th>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

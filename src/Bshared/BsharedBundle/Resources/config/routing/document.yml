@@ -1,0 +1,35 @@
+user_document:
+    path:  /
+    defaults: { _controller: "BsharedBsharedBundle:Document:index" }
+
+user_document_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "BsharedBsharedBundle:Document:sort" }
+    requirements: { type: ASC|DESC }
+
+user_document_show:
+    path:  /{id}/show
+    defaults: { _controller: "BsharedBsharedBundle:Document:show" }
+
+user_document_new:
+    path:  /new
+    defaults: { _controller: "BsharedBsharedBundle:Document:new" }
+
+user_document_create:
+    path:  /create
+    defaults: { _controller: "BsharedBsharedBundle:Document:create" }
+    requirements: { _method: post }
+
+user_document_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "BsharedBsharedBundle:Document:edit" }
+
+user_document_update:
+    path:  /{id}/update
+    defaults: { _controller: "BsharedBsharedBundle:Document:update" }
+    requirements: { _method: post|put }
+
+user_document_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "BsharedBsharedBundle:Document:delete" }
+    requirements: { _method: post|delete }

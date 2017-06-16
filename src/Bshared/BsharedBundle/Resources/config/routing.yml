@@ -1,0 +1,14 @@
+bshared_bshared_user_document:
+    resource: "@BsharedBsharedBundle/Resources/config/routing/document.yml"
+    prefix:   /user/document
+
+# Homepage
+bshared_homepage:
+    path:     /
+    defaults: { _controller: BsharedBsharedBundle:Frontend:index }
+
+# Admin
+bshared_admin:
+    path:     /admin/dashboard
+    defaults: { _controller: BsharedBsharedBundle:Backend:admin }
+

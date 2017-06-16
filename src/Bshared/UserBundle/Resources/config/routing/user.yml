@@ -1,0 +1,35 @@
+admin_users:
+    path:  /
+    defaults: { _controller: "BsharedUserBundle:User:index" }
+
+admin_users_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "BsharedUserBundle:User:sort" }
+    requirements: { type: ASC|DESC }
+
+admin_users_show:
+    path:  /{id}/show
+    defaults: { _controller: "BsharedUserBundle:User:show" }
+
+admin_users_new:
+    path:  /new
+    defaults: { _controller: "BsharedUserBundle:User:new" }
+
+admin_users_create:
+    path:  /create
+    defaults: { _controller: "BsharedUserBundle:User:create" }
+    requirements: { _method: post }
+
+admin_users_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "BsharedUserBundle:User:edit" }
+
+admin_users_update:
+    path:  /{id}/update
+    defaults: { _controller: "BsharedUserBundle:User:update" }
+    requirements: { _method: post|put }
+
+admin_users_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "BsharedUserBundle:User:delete" }
+    requirements: { _method: post|delete }

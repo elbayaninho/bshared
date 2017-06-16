@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% form_theme form 'BsharedBsharedBundle:Form:bootstrap_3_layout.html.twig' %}
+
+{% block title %}{{ '%entity% creation'|trans({'%entity%': 'Document'}, 'admin') }} - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-xs-offset-2">
+                <div class="row">
+                    <div class="page-header">
+                        <h1>{{ '%entity% creation'|trans({'%entity%': 'Document'}, 'admin') }}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    {{ form_start(form, {action: path('user_document_create')}) }}
+                    {{ form_widget(form) }}
+                    <p>
+                        <button class="btn btn-primary" type="submit">{{ 'Create'|trans({}, 'admin') }}</button>
+                    </p>
+                    {{ form_end(form) }}
+
+                    <div class="btn-group record_actions">
+                        <a class="btn btn-info" href="{{ path('user_document') }}">
+                            <i class="fa fa-list"></i> {{ 'Back to the list'|trans({}, 'admin') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
